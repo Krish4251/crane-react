@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import CraneForm from "./components/CraneForm";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="min-h-screen bg-gray-100">
+      <header className="bg-blue-600 text-white py-4 px-6">
+        <div className="flex items-center justify-between">
+          <img src="/logo192.png" alt="Company Logo" className="h-12" />
+          <div>
+            <h1 className="text-2xl font-bold">Krish Crane Manufacturing</h1>
+            <p className="text-sm">Your trusted crane partner</p>
+          </div>
+        </div>
       </header>
+      <main className="py-8 px-4">
+        <CraneForm />
+      </main>
     </div>
   );
-}
+};
 
 export default App;
