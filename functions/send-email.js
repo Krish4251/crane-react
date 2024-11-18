@@ -1,4 +1,4 @@
-const { sendMail } = require("../emailer"); // Update the path to your emailer.js
+const { sendMail } = require("functions\emailer.js"); // Update the path to your emailer.js
 
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
