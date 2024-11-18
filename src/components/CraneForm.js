@@ -24,6 +24,8 @@ const CraneForm = () => {
   ]);
 
   const [showPreview, setShowPreview] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formStatus, setFormStatus] = useState("");
 
   const handlePersonalDetailsChange = (e) => {
     const { name, value } = e.target;
@@ -62,6 +64,33 @@ const CraneForm = () => {
   const removeCrane = (index) => {
     const updatedCranes = cranes.filter((_, i) => i !== index);
     setCranes(updatedCranes);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setFormStatus("Sending email...");
+
+    // Send form data to your backend API (Netlify function)
+    const emailData = { personalDetails, cranes };
+
+    try {
+      const response = await fetch(
+        "https://.netlify.app/functions/send-email",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(emailData),
+        }
+      );
+      const result = await response.json();
+      setLoading(false);
+      setFormStatus(result.message || "Email sent successfully!");
+    } catch (error) {
+      setLoading(false);
+      setFormStatus("Failed to send email.");
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -188,7 +217,16 @@ const CraneForm = () => {
           Preview & Submit
         </button>
       </div>
-      {showPreview && <CranePreview personalDetails={personalDetails} cranes={cranes} showPreview={showPreview} setShowPreview={setShowPreview} />}
+      {showPreview && (
+        <CranePreview
+          personalDetails={personalDetails}
+          cranes={cranes}
+          showPreview={showPreview}
+          setShowPreview={setShowPreview}
+        />
+      )}
+      {loading && <p>Loading...</p>}
+      {formStatus && <p>{formStatus}</p>}
     </div>
   );
 };
