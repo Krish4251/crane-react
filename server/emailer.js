@@ -38,16 +38,24 @@ const sendMail = async (formData) => {
         const transporter = nodemailer.createTransport({
           service: "gmail",
           auth: {
-            user: "12302080603005@adit.ac.in",
-            pass: "eagg wkni qzqa bjbx",
+            user: "2023002044.adit@cvmu.edu.in",
+            pass: "fmkd kzha hmcp lyuq",
           },
         });
 
         const mailOptions = {
-          from: "your-email@gmail.com",
-          to: [formData.personalDetails.email, "owner-email@example.com"],
-          subject: "Crane Form Details",
-          text: "Attached is the PDF containing the crane form details.",
+          from: "2023002044.adit@cvmu.edu.in",
+          to: [formData.personalDetails.email, "2023002044.adit@cvmu.edu.in"],
+          subject: "Krish Crane - Configurations",
+          text: `Thank you for submitting your crane requirement form. We have reviewed your specifications, and attached you will find the configuration file tailored to your request.\n\n
+Please feel free to reach out if you have any questions or need further assistance. Our team is here to support you every step of the way.\n\n
+Thank you for choosing Krish Crane. We appreciate your trust in our products and services.\n\n
+Best regards,\n
+Rahul Vishvakarma\n
+Project Manager\n
+Krish Crane\n
+Phone: 9574879333\n
+Email: info@krishcranes.com`,
           attachments: [
             {
               filename: fileName,

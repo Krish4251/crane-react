@@ -1,15 +1,21 @@
 import React from "react";
 import CraneForm from "./components/CraneForm";
 
+
 const App = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-blue-600 text-white py-4 px-6">
+    <div className="min-h-screen bg-gray-50">
+      <header className="py-4 px-6">
         <div className="flex items-center justify-between">
-          <img src="/logo192.png" alt="Company Logo" className="h-12" />
+           <img
+          src="./KC.png"
+          alt="Logo"
+          className="h-16"
+          style={{ maxWidth: 200, width: '100%', height: 'auto', objectFit: 'cover' }}
+        />
           <div>
-            <h1 className="text-2xl font-bold">Krish Crane Manufacturing</h1>
-            <p className="text-sm">Your trusted crane partner</p>
+            {/* <h1 className="text-2xl font-bold">Krish Crane Manufacturing</h1> */}
+            <p className="text-sm">A Crane Manufacturing Company</p>
           </div>
         </div>
       </header>
