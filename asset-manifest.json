@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/crane-react/static/css/main.1c896c43.css",
-    "main.js": "/crane-react/static/js/main.b58ea123.js",
+    "main.css": "/crane-react/static/css/main.3cf3444a.css",
+    "main.js": "/crane-react/static/js/main.b68f1a4e.js",
     "static/js/453.5dcb4128.chunk.js": "/crane-react/static/js/453.5dcb4128.chunk.js",
     "index.html": "/crane-react/index.html",
-    "main.1c896c43.css.map": "/crane-react/static/css/main.1c896c43.css.map",
-    "main.b58ea123.js.map": "/crane-react/static/js/main.b58ea123.js.map",
+    "main.3cf3444a.css.map": "/crane-react/static/css/main.3cf3444a.css.map",
+    "main.b68f1a4e.js.map": "/crane-react/static/js/main.b68f1a4e.js.map",
     "453.5dcb4128.chunk.js.map": "/crane-react/static/js/453.5dcb4128.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c896c43.css",
-    "static/js/main.b58ea123.js"
+    "static/css/main.3cf3444a.css",
+    "static/js/main.b68f1a4e.js"
   ]
 }
